@@ -1,0 +1,20 @@
+{
+  "name": "chart",
+  "version": "1.0.0",
+  "homepage": "https://artem26r.github.io/chart",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --out-dir=build",
+    "deploy": "gh-pages -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.60.0"
+  }
+}

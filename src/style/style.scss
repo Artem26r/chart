@@ -1,0 +1,885 @@
+@import "fonts.scss";
+@import "reset.scss";
+
+$Dark-blue: #003274;
+$Hight-blue: #067bcb;
+$Blue: #025ea1;
+$Blue-2: #081735;
+$Light-blue-original: #6cace4;
+$Gray: #ebf0fb;
+$Gray-3: #cacdd5;
+$Gray-2: #8f95b2;
+$White: white;
+$Background: #eff5ff;
+$Black: #000000;
+$Dark-gray: #333333;
+$Light-gray: #e8ecee;
+
+$Green: #56c02b;
+$Orange: #fd6925;
+$Yellow: #fcc30b;
+$Red: #ff3a21;
+$Violet: #5f64de;
+$Turquoise: #259789;
+
+$New: #cfe9d4;
+$At-work: #d9e9fa;
+$On-approval: #fff2c7;
+$Under-revision: #fee3d7;
+$Completed: #e8ecee;
+
+body {
+  padding: 0 36px 0 111.5px;
+  background: $Background;
+}
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  height: 100%;
+  max-width: 244px;
+  background: $Dark-blue;
+  &__container {
+    padding: 32px 7.5px 32px 12.5px;
+    overflow: hidden;
+    height: 100%;
+    max-width: 84px;
+    @include animate-prefix("transition", "200ms");
+    &:hover {
+      max-width: 244px;
+      padding: 32px 12px 32px 12.5px;
+    }
+    &:hover {
+      & .menu__logo {
+        display: block;
+        padding: 0 0 32px 15.5px;
+        max-width: 244px;
+        margin: 0;
+      }
+      & .menu__nav-link {
+        gap: 16px;
+      }
+      & .menu__nav-link-img {
+        margin: 0 0 0 0px;
+      }
+      & .menu__nav-link {
+        max-width: 220px;
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    gap: 26px;
+    max-width: 64px;
+    max-height: 48px;
+    overflow: hidden;
+    @include animate-prefix("transition", "200ms");
+    &:hover {
+      background: $Blue;
+    }
+    &:hover .menu__nav-link_full-menu {
+      color: $White;
+    }
+
+    &:hover .menu__nav-link-img_megaphone {
+      background: url("/src/img/menu/active/Megaphone.svg");
+    }
+    &:hover .menu__nav-link-img_houseline {
+      background: url("/src/img/menu/active/HouseLine.svg");
+    }
+    &:hover .menu__nav-link-img_lightning {
+      background: url("/src/img/menu/active/Lightning.svg");
+    }
+    &:hover .menu__nav-link-img_calendarblank {
+      background: url("/src/img/menu/active/CalendarBlank.svg");
+    }
+    &:hover .menu__nav-link-img_buildings {
+      background: url("/src/img/menu/active/Buildings.svg");
+    }
+    &:hover .menu__nav-link-img_clipboardtext {
+      background: url("/src/img/menu/active/ClipboardText.svg");
+    }
+    &:hover .menu__nav-link-img_notepad {
+      background: url("/src/img/menu/active/Notepad.svg");
+    }
+    &:hover .menu__nav-link-img_trophy {
+      background: url("/src/img/menu/active/Trophy.svg");
+    }
+    &:hover .menu__nav-link-img_briefcase {
+      background: url("/src/img/menu/active/Briefcase.svg");
+    }
+    &:hover .menu__nav-link-img_chartbar {
+      background: url("/src/img/menu/active/ChartBar.svg");
+    }
+    &:hover .menu__nav-link-img_chartlineup {
+      background: url("/src/img/menu/active/ChartLineUp.svg");
+    }
+    &:hover .menu__nav-link-img_files {
+      background: url("/src/img/menu/active/Files.svg");
+    }
+    &:hover .menu__nav-link-img_books {
+      background: url("/src/img/menu/active/Books.svg");
+    }
+    &:hover .menu__nav-link-img_treestructure {
+      background: url("/src/img/menu/active/TreeStructure.svg");
+    }
+    &_active {
+      background: $Hight-blue;
+      .menu__nav-link_full-menu {
+        color: $White;
+      }
+      & .menu__nav-link-img_megaphone {
+        background: url("/src/img/menu/active/Megaphone.svg");
+      }
+      & .menu__nav-link-img_houseline {
+        background: url("/src/img/menu/active/HouseLine.svg");
+      }
+      & .menu__nav-link-img_lightning {
+        background: url("/src/img/menu/active/Lightning.svg");
+      }
+      & .menu__nav-link-img_calendarblank {
+        background: url("/src/img/menu/active/CalendarBlank.svg");
+      }
+      & .menu__nav-link-img_buildings {
+        background: url("/src/img/menu/active/Buildings.svg");
+      }
+      & .menu__nav-link-img_clipboardtext {
+        background: url("/src/img/menu/active/ClipboardText.svg");
+      }
+      & .menu__nav-link-img_notepad {
+        background: url("/src/img/menu/active/Notepad.svg");
+      }
+      & .menu__nav-link-img_trophy {
+        background: url("/src/img/menu/active/Trophy.svg");
+      }
+      & .menu__nav-link-img_briefcase {
+        background: url("/src/img/menu/active/Briefcase.svg");
+      }
+      & .menu__nav-link-img_chartbar {
+        background: url("/src/img/menu/active/ChartBar.svg");
+      }
+      & .menu__nav-link-img_chartlineup {
+        background: url("/src/img/menu/active/ChartLineUp.svg");
+      }
+      & .menu__nav-link-img_files {
+        background: url("/src/img/menu/active/Files.svg");
+      }
+      & .menu__nav-link-img_books {
+        background: url("/src/img/menu/active/Books.svg");
+      }
+      & .menu__nav-link-img_treestructure {
+        background: url("/src/img/menu/active/TreeStructure.svg");
+      }
+      &:hover {
+        background: $Hight-blue;
+      }
+    }
+  }
+
+  &__nav-link-img {
+    min-width: 24px;
+    height: 24px;
+    margin: 0 0 0 4px;
+    @include animate-prefix("transition", "200ms");
+    &_megaphone {
+      background: url("/src/img/menu/Megaphone.svg");
+    }
+    &_houseline {
+      background: url("/src/img/menu/HouseLine.svg");
+    }
+    &_lightning {
+      background: url("/src/img/menu/Lightning.svg");
+    }
+    &_calendarblank {
+      background: url("/src/img/menu/CalendarBlank.svg");
+    }
+    &_buildings {
+      background: url("/src/img/menu/Buildings.svg");
+    }
+    &_clipboardtext {
+      background: url("/src/img/menu/ClipboardText.svg");
+    }
+    &_notepad {
+      background: url("/src/img/menu/Notepad.svg");
+    }
+    &_trophy {
+      background: url("/src/img/menu/Trophy.svg");
+    }
+    &_briefcase {
+      background: url("/src/img/menu/Briefcase.svg");
+    }
+    &_chartbar {
+      background: url("/src/img/menu/ChartBar.svg");
+    }
+    &_chartlineup {
+      background: url("/src/img/menu/ChartLineUp.svg");
+    }
+    &_files {
+      background: url("/src/img/menu/Files.svg");
+    }
+    &_books {
+      background: url("/src/img/menu/Books.svg");
+    }
+    &_treestructure {
+      background: url("/src/img/menu/TreeStructure.svg");
+    }
+  }
+  &__nav-link_full-menu {
+    font-family: SegoeUiRegular, sans-serif;
+    font-size: 14px;
+    color: $Gray-3;
+    white-space: nowrap;
+  }
+  &__logo {
+    display: block;
+    padding: 0 0 32px 0px;
+    max-width: 32px;
+    margin: 0 0 0 12px;
+    overflow: hidden;
+    @include animate-prefix("transition", "200ms");
+  }
+}
+
+.bread-crumbs {
+  padding: 21.5px 0 0 0;
+  font-size: 14px;
+  &__link {
+    font-family: SegoeUiBold, sans-serif;
+    color: $Hight-blue;
+    text-decoration: none;
+  }
+  &__link::after {
+    content: " >";
+    color: $Black;
+  }
+  &__position-site {
+    font-family: SegoeUiRegular, sans-serif;
+    color: $Black;
+  }
+}
+.title {
+  padding: 3px 0 0 0;
+  &__txt {
+    font-family: SegoeUiBold, sans-serif;
+    font-size: 32px;
+    line-height: 48px;
+    color: $Black;
+  }
+}
+
+.view-option {
+  font-family: SegoeUiRegular, sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  padding: 11px 0 0 0;
+
+  &__toggle {
+    padding: 4.5px 5.5px;
+    border: $Dark-gray 1px solid;
+    border-radius: 8px;
+    display: flex;
+    gap: 4.5px;
+  }
+  &__kanban {
+    cursor: pointer;
+    width: 34px;
+    height: 32px;
+  }
+  &__kanban_line {
+    background: url("/src/img/view-option/iconKanban.svg");
+    &.active {
+      background: url("/src/img/view-option/active/iconKanban.svg");
+    }
+  }
+  &__kanban_grid {
+    background: url("/src/img/view-option/iconKanban1.svg");
+
+    &.active {
+      background: url("/src/img/view-option/active/iconKanban1.svg");
+    }
+  }
+}
+
+.todo {
+  padding: 0 0 60px 0;
+  &__column {
+    min-width: 236px;
+    width: 236px;
+    border-radius: 16px;
+    height: 100%;
+  }
+  &__content {
+    display: flex;
+    gap: 26px;
+    padding: 46px 0 60px 0;
+    width: 100%;
+    overflow: auto;
+  }
+  &__header {
+    padding: 9.5px 14px;
+    display: flex;
+    align-items: center;
+    font-family: SegoeUiBold, sans-serif;
+    gap: 8px;
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 25.2px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background: $Dark-gray;
+    }
+  }
+  &__count {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  &__column_new {
+    background: $New;
+  }
+  &__column_at-work {
+    background: $At-work;
+  }
+  &__column_on-approval {
+    background: $On-approval;
+  }
+  &__column_under-revision {
+    background: $Under-revision;
+  }
+  &__column_completed {
+    background: $Completed;
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 23px;
+  }
+  &__card {
+    padding: 12px;
+    background: $White;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  &__card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  &__card-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &__card-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__card-sub-txt {
+    font-family: SegoeUiRegular, sans-serif;
+    font-size: 10px;
+    color: $Gray-2;
+  }
+  &__card-sub-tag {
+    font-family: SegoeUiBold, sans-serif;
+    font-size: 12px;
+    line-height: 15.6px;
+    padding: 5px 10px;
+    border-radius: 16px;
+  }
+  &__card-sub-tag-red {
+    color: $Red;
+    border: 1px solid currentColor;
+  }
+  &__card-sub-tag-violet {
+    color: $Violet;
+    border: 1px solid currentColor;
+  }
+  &__card-title {
+    font-family: SegoeUiBold, sans-serif;
+    font-size: 14px;
+    line-height: 18.2px;
+    color: $Blue-2;
+  }
+  &__card-fio {
+    font-family: SegoeUiRegular, sans-serif;
+    display: flex;
+    font-size: 12px;
+    line-height: 15.6px;
+    gap: 5px;
+  }
+  &__card-fio-img {
+    min-width: 16px;
+    height: 16px;
+    background: url("/src/img/todo/user.svg");
+  }
+  &__card-file-img {
+    min-width: 16px;
+    width: 16px;
+    height: 16px;
+    background: url("/src/img/todo/paperclip.svg") center center no-repeat;
+  }
+  &__card-chat {
+    min-width: 16px;
+    width: 16px;
+    height: 16px;
+    background: url("/src/img/todo/chat.svg") center center no-repeat;
+  }
+  &__card-date-file {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__card-file-chat {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  &__card-file-img-count {
+    display: flex;
+    padding: 4px 8px;
+    gap: 2px;
+    background: $Light-gray;
+    border-radius: 18px;
+  }
+  &__card-file-count {
+    font-family: SegoeUiBold, sans-serif;
+    font-size: 12px;
+    line-height: 15.6px;
+    color: $Gray-2;
+  }
+  &__card-date {
+    font-family: SegoeUiRegular, sans-serif;
+    font-size: 12px;
+    line-height: 15.6px;
+  }
+  &__card-date_red {
+    font-family: SegoeUiBold, sans-serif;
+    color: $Red;
+  }
+  &__all-complited {
+    font-family: SegoeUiRegular, sans-serif;
+    color: $Hight-blue;
+    padding: 4px 0 12px 14px;
+    cursor: pointer;
+  }
+}
+
+.chart {
+  &__frame {
+    display: flex;
+    width: 300px;
+    position: relative;
+    border-bottom: 1px solid $Gray;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      width: calc(100% - 10px);
+      border-bottom: 1px solid $Gray;
+    }
+  }
+
+  &__line_red,
+  &__line_gray,
+  &__line_green {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 -5px 0;
+  }
+
+  &__line_red::after,
+  &__line_gray::after,
+  &__line_green::after {
+    content: "";
+    width: 100%;
+    border-top: 1px dashed currentColor;
+    display: block;
+    margin: 0 0 0 4px;
+  }
+  &__line {
+    font-family: SegoeUiRegular, sans-serif;
+    font-size: 10px;
+  }
+  &__line_red {
+    color: $Red;
+    bottom: 50px;
+  }
+  &__line_gray {
+    color: $Gray-2;
+    bottom: 100px;
+  }
+  &__line_green {
+    color: $Turquoise;
+    bottom: 150px;
+  }
+  &__title {
+    font-family: SegoeUiBold, sans-serif;
+    font-size: 24px;
+    padding: 0 0 72px 0;
+  }
+  &__subtitle {
+    font-family: SegoeUiRegular, sans-serif;
+    font-size: 18px;
+    padding: 0 0 40px;
+  }
+  &__barchart-items {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    bottom: 0;
+    left: 55px;
+    gap: 25px;
+    z-index: 1;
+  }
+  &__barchart-block {
+    margin: 0 0 -21px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: calc(100% + 20px);
+  }
+  &__barchart-item {
+    width: 44px;
+    height: 100px;
+  }
+  &__barchart-item_cz {
+    background: $Light-blue-original;
+  }
+  &__barchart-item_forecast {
+    background: $Blue;
+  }
+  &__line-top {
+    height: 100%;
+    min-height: 6px;
+    width: 1px;
+    background: $Gray-2;
+    margin: 0 auto 5px;
+    position: relative;
+  }
+  &__line-top_cz::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 1px;
+    background: $Gray-2;
+  }
+  &__line-top_forecast::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 22px;
+    height: 1px;
+    background: $Gray-2;
+  }
+  &__line-top_forecast::before {
+    content: url("/src/img/chart/Arrow.svg");
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+  }
+  &__difference {
+    font-size: 12px;
+    font-family: SegoeUiBold, sans-serif;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    position: absolute;
+    top: -16px;
+    left: 24px;
+    color: $Turquoise;
+  }
+  &__barchart-title {
+    font-family: SegoeUiRegular, sans-serif;
+    font-size: 11px;
+    line-height: 15px;
+    padding: 6px 0 0 0;
+  }
+  &__barchart-count {
+    font-family: SegoeUiBold, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 0 0 3px 0;
+  }
+}
+
+.chart-2 {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  padding: 20px 0;
+  &__frame {
+    display: flex;
+    width: 300px;
+    position: relative;
+    border-bottom: 1px solid $Gray;
+    padding: 16px 0 0 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      width: calc(100% - 10px);
+      border-bottom: 1px solid $Gray;
+    }
+  }
+  &__line-block {
+    position: absolute;
+    width: 100%;
+  }
+  &__line_red,
+  &__line_gray,
+  &__line_green {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 -5px 0;
+  }
+  &__line {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 -5px 0;
+    opacity: .4;
+  }
+  &__line::after {
+    content: "";
+    width: 100%;
+    border-top: 1px dashed currentColor;
+    display: block;
+    margin: 0 0 0 4px;
+  }
+  &__line_red::after,
+  &__line_gray::after,
+  &__line_green::after {
+    content: "";
+    width: 100%;
+    border-top: 1px dashed currentColor;
+    display: block;
+    margin: 0 0 0 4px;
+  }
+  &__line {
+    font-family: SegoeUiRegular, sans-serif;
+    font-size: 10px;
+  }
+  &__line_red {
+    color: $Red;
+    bottom: 50px;
+  }
+  &__line_gray {
+    color: $Gray-2;
+    bottom: 100px;
+  }
+  &__line_green {
+    color: $Turquoise;
+    bottom: 150px;
+  }
+  &__title {
+    font-family: SegoeUiBold, sans-serif;
+    font-size: 24px;
+    padding: 0 0 72px 0;
+  }
+  &__subtitle {
+    font-family: SegoeUiRegular, sans-serif;
+    font-size: 18px;
+    padding: 0 0 40px;
+  }
+  &__barchart-items {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    bottom: 20px;
+    left: 55px;
+    gap: 25px;
+    z-index: 1;
+  }
+  &__barchart-block {
+    margin: 0 0 -21px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: calc(100% + 20px);
+  }
+  &__barchart-item {
+    width: 44px;
+    height: 10px;
+    @include animate-prefix("transition", "400ms");
+  }
+  &__barchart-item_cz {
+    background: $Light-blue-original;
+  }
+  &__barchart-item_forecast {
+    background: $Blue;
+  }
+  &__line-top {
+    height: 100%;
+    min-height: 6px;
+    width: 1px;
+    background: $Gray-2;
+    margin: 0 auto 5px;
+    position: relative;
+  }
+  &__line-top_cz::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 1px;
+    background: $Gray-2;
+  }
+  &__line-top_forecast::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 22px;
+    height: 1px;
+    background: $Gray-2;
+  }
+  &__line-top_forecast::before {
+    content: url("/src/img/chart/Arrow.svg");
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+  }
+  &__difference {
+    font-size: 12px;
+    font-family: SegoeUiBold, sans-serif;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    position: absolute;
+    top: -16px;
+    left: 24px;
+    color: $Turquoise;
+    svg {
+      @include animate-prefix("transition", "200ms");
+    }
+
+    &.negative {
+      color: $Red;
+
+      svg {
+        transform: rotate(180deg);
+        translate: 0px 3px;
+      }
+    }
+  }
+  &__barchart-title {
+    font-family: SegoeUiRegular, sans-serif;
+    font-size: 11px;
+    line-height: 15px;
+    padding: 6px 0 0 0;
+    position: absolute;
+    bottom: -40px;
+  }
+  &__barchart-count {
+    font-family: SegoeUiBold, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 0 0 3px 0;
+  }
+}
+
+.tabs {
+  font-size: 0;
+  width: 100%;
+  height: 100%;
+  margin: 66px 0 80px;
+  margin-left: auto;
+  margin-right: auto;
+  &__radio {
+    display: none;
+  }
+  &__content {
+    display: none;
+    font-size: 16px;
+    padding: 72px 25px 72px 25px;
+    height: 100%;
+    min-height: 609px;
+    border-radius: 0px 16px 16px 16px;
+    box-shadow: 0px 8px 16px rgba(143, 149, 178, 0.15);
+    background: $White;
+  }
+  &__label {
+    font-family: SegoeUiRegular, sans-serif;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    padding: 0 16px;
+    height: 48px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+    border-radius: 16px 16px 0px 0px;
+    background: rgba(6, 123, 203, 0.1);
+    box-shadow: 0px -6px 16px rgba(143, 149, 178, 0.15);
+  }
+  &__label:not(:first-of-type) {
+    border-left: none;
+  }
+  &__radio:checked+label {
+    font-family: SegoeUiBold, sans-serif;
+    background: $White;
+    border-bottom: 1px solid $White;
+    box-shadow: none;
+    padding: 0px 12px;
+  }
+}
+#tab-btn-1:checked ~ #content-1,
+#tab-btn-2:checked ~ #content-2,
+#tab-btn-3:checked ~ #content-3 {
+  display: block;
+}
+
+
+
+.chart__test {
+  font-family: SegoeUiRegular, sans-serif;
+  font-size: 14px;
+  padding: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  & input {
+    background: rgba(143, 149, 178, 0.15) ;
+  }
+  & div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
